@@ -7,8 +7,9 @@ import { Recipe } from '../recipe.model';
   styleUrl: './recipe-list.component.css'
 })
 export class RecipeListComponent implements OnInit {
-  recepies: Recipe[] = [
-    new Recipe('Tortilla', 'Tortilla de patatas con cebolla', '../../assets/totilla.png')
+  recipes: Recipe[] = [
+    new Recipe('Tortilla', 'Tortilla de patatas con cebolla', '../../../assets/tortilla.png'),
+    new Recipe('Tortilla', 'Tortilla de patatas con cebolla', '../../../assets/tortilla.png')
   ];
 
   constructor() { }
