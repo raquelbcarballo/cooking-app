@@ -4,10 +4,8 @@ import { Ingredient } from "../shared/ingredient.model";
 export class ShoppingListService {
     ingredientsChange = new EventEmitter<Ingredient[]>()
     private ingredients: Ingredient[] = [
-        new Ingredient('Potatoes', 5),
-        new Ingredient('Eggs', 10),
-        new Ingredient('Onion', 1)
-    ]
+        new Ingredient('Apples', 5)
+    ];
 
     getIngredients() {
         return this.ingredients.slice()
@@ -15,6 +13,15 @@ export class ShoppingListService {
 
     addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient)
+        this.ingredientsChange.emit(this.ingredients.slice())
+    }
+
+    addShoppingListIngredients(ingredients: Ingredient[]) {
+        // for (let ingredient of ingredients) {
+        //     this.addIngredient(ingredient)
+        // }
+        // we do the same below
+        this.ingredients.push(...ingredients)
         this.ingredientsChange.emit(this.ingredients.slice())
     }
 }
