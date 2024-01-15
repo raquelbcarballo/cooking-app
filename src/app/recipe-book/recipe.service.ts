@@ -12,7 +12,7 @@ export class RecipeService {
             new Ingredient('Eggs', 10),
             new Ingredient('Onion', 1)
         ]),
-        new Recipe('Another Tortilla', 'Tortilla de patatas con cebolla', '../../../assets/tortilla.png', [
+        new Recipe('Another Tortilla', 'Tortilla de patatas', '../../../assets/tortilla.png', [
             new Ingredient('Potatoes', 5),
             new Ingredient('Eggs', 10),
             new Ingredient('Onion', 1)
@@ -27,5 +27,9 @@ export class RecipeService {
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.shoppingListService.addShoppingListIngredients(ingredients)
+    }
+
+    getRecipe(id: number) {
+        return this.recipes[id]
     }
 }
